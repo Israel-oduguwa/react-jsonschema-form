@@ -1,5 +1,10 @@
 import type { GlobalUISchemaOptions, Registry, RJSFSchema, TemplatesType } from '../src/index.ts';
-import { createSchemaUtils, englishStringTranslator, shouldRenderOptionalField } from '../src/index.ts';
+import {
+  createSchemaUtils,
+  englishStringTranslator,
+  mergeThemePresentation,
+  shouldRenderOptionalField,
+} from '../src/index.ts';
 import {
   getOptionalDataControlsType,
   getSchemaTypesForXxxOf,
@@ -63,6 +68,7 @@ const registry: Registry = {
   translateString: englishStringTranslator,
   fields: {},
   widgets: {},
+  presentation: mergeThemePresentation(),
   templates: {} as TemplatesType,
   globalFormOptions: GLOBAL_FORM_OPTIONS,
 };

@@ -1,7 +1,7 @@
 import type { MockInstance } from 'vitest';
 
 import type { Registry, RJSFSchema, TemplatesType } from '../src/index.ts';
-import { createSchemaUtils, englishStringTranslator, isRootSchema } from '../src/index.ts';
+import { createSchemaUtils, englishStringTranslator, isRootSchema, mergeThemePresentation } from '../src/index.ts';
 import getTestValidator from './testUtils/getTestValidator.ts';
 import { GLOBAL_FORM_OPTIONS } from './testUtils/testData.ts';
 
@@ -42,6 +42,7 @@ function getRegistry(rootSchema: RJSFSchema): Registry {
     translateString: englishStringTranslator,
     fields: {},
     widgets: {},
+    presentation: mergeThemePresentation(),
     templates: {} as TemplatesType,
     globalFormOptions: GLOBAL_FORM_OPTIONS,
   };
